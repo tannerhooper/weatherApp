@@ -1,0 +1,9 @@
+.mat-card {
+    margin: 2%;
+    max-width: 200px;
+}
+
+.locHolder {
+    display: flex;
+    flex-wrap: wrap;
+}

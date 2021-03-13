@@ -1,0 +1,14 @@
+.mat-card {
+    margin: 2%;
+    min-width: 390px;
+    max-width: 400px;
+}
+
+.locHolder {
+    display: flex;
+}
+
+.loc {
+    margin: 30px;
+    padding: 5px;
+}

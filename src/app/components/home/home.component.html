@@ -1,0 +1,25 @@
+<div>
+    <form [formGroup]="searchForm" (ngSubmit)="onSearch()">
+        <mat-form-field appearance="fill">
+            <mat-label>Search</mat-label>
+            <input matInput formControlName="city">
+        </mat-form-field>
+        <button class="button" type="submit">Search</button>
+    </form>
+    <div *ngIf="selected && !multiple">
+        <location-card [curLoc]="selected" (updateLoc)="save($event)"></location-card>
+    </div>
+    <div *ngIf="multiple">
+        <mat-form-field appearance="fill">
+            <mat-label>Select a City</mat-label>
+            <mat-select>
+                <mat-option *ngFor="let loc of results" [value]="loc" (click)="cityChosen(loc)">
+                    {{loc.City}}, {{loc.Parent}}
+                </mat-option>
+            </mat-select>
+          </mat-form-field>
+    </div>
+    <div *ngIf="noRes">
+        No Results!
+    </div>
+</div>
